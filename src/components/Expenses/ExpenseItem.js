@@ -7,7 +7,7 @@ function ExpenseItem(props) {
   
 
   const clickHandler = () => {
-    useState
+    
   }
 
   return (
