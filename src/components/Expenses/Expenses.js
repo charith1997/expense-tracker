@@ -15,6 +15,19 @@ function Expenses(props) {
     return expense.date.getFullYear().toString() === filteredYear;
   });
 
+  let expenseContent = <p>No expense found!</p>;
+
+  if (filteredExpenses.length > 0) {
+    expenseContent = filteredExpenses.map((item) => (
+      <ExpenseItem
+        key={item.id}
+        title={item.title}
+        amount={item.amount}
+        date={item.date}
+      />
+    ));
+  }
+
   return (
     <Card className="expenses">
       <ExpensesFilter
@@ -25,14 +38,40 @@ function Expenses(props) {
         <ExpenseItem key={item.id} title={item.title} amount={item.amount} date={item.date} />
       ))} */}
 
-      {filteredExpenses.map((item) => (
+      {/* {filteredExpenses.map((item) => (
         <ExpenseItem
           key={item.id}
           title={item.title}
           amount={item.amount}
           date={item.date}
         />
-      ))}
+      ))} */}
+
+      {/* {filteredExpenses.length === 0 ? (
+        <p>No expenses found!</p>
+      ) : (
+        filteredExpenses.map((item) => (
+          <ExpenseItem
+            key={item.id}
+            title={item.title}
+            amount={item.amount}
+            date={item.date}
+          />
+        ))
+      )} */}
+
+      {/* {filteredExpenses.length === 0 && <p>No expenses found!</p>}
+      {filteredExpenses.length > 0 &&
+        filteredExpenses.map((item) => (
+          <ExpenseItem
+            key={item.id}
+            title={item.title}
+            amount={item.amount}
+            date={item.date}
+          />
+        ))} */}
+
+      {expenseContent}
 
       {/* <ExpenseItem
         title={props.items[0].title}
