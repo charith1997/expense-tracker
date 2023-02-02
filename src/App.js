@@ -22,6 +22,12 @@ const EXPENSES = [
     amount: 450,
     date: new Date(2021, 5, 12),
   },
+  {
+    id: "e5",
+    title: "New Desk (Wooden)",
+    amount: 450,
+    date: new Date(2021, 5, 12),
+  },
 ];
 
 const App = () => {
